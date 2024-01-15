@@ -14,7 +14,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 parser = argparse.ArgumentParser(description='manual to this script')
-parser.add_argument("--seed", type=int, default=0)
+parser.add_argument("--seed", type=int, default=5011)
 parser.add_argument("--round", type=int, default=5)
 parser.add_argument("--dataset", type=str, default='nsl')
 parser.add_argument("--epochs", type=int, default=4)
@@ -81,7 +81,7 @@ criterion = CRCLoss(device, tem)
 
 for i in range(seed_round):
     # Set the seed for the random number generator for this iteration
-    setup_seed(seed+i)
+    setup_seed(seed)
 
     online_x_train, online_x_test, online_y_train, online_y_test = train_test_split(x_train, y_train, test_size=percent, random_state=seed+i)
     train_ds = TensorDataset(online_x_train, online_y_train)
