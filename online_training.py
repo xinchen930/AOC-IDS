@@ -1,26 +1,12 @@
-import os
 import torch
 import numpy as np
-import random
-import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt 
-from sklearn.preprocessing import StandardScaler
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.base import BaseEstimator, TransformerMixin
 import torch
-from torch import Tensor
-import torch.nn as nn
-import math
 import torch.nn as nn
 import torch.nn.functional as F
-from sklearn.metrics import accuracy_score,confusion_matrix, precision_score, recall_score, f1_score
 from torch.utils.data import TensorDataset
-from torch.utils.data import DataLoader
 from sklearn.model_selection import train_test_split
-import scipy.optimize as opt
-import torch.distributions as dist
-from utils_upload import *
+from utils import *
 
 import argparse
 import warnings
@@ -28,7 +14,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 parser = argparse.ArgumentParser(description='manual to this script')
-parser.add_argument("--seed", type=int, default=5011)
+parser.add_argument("--seed", type=int, default=0)
 parser.add_argument("--round", type=int, default=5)
 parser.add_argument("--dataset", type=str, default='nsl')
 parser.add_argument("--epochs", type=int, default=4)
@@ -36,7 +22,7 @@ parser.add_argument("--epoch_1", type=int, default=1)
 parser.add_argument("--percent", type=float, default=0.8)
 parser.add_argument("--flip_percent", type=float, default=0.2)
 parser.add_argument("--sample_interval", type=int, default=2000)
-parser.add_argument("--cuda", type=str, default="2")
+parser.add_argument("--cuda", type=str, default="0")
 
 args = parser.parse_args()
 dataset = args.dataset
