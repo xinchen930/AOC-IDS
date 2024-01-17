@@ -22,7 +22,7 @@ We tested the effectiveness of our proposed method on the NSL-KDD and UNSW-NB15 
 
 Here is an example of how to start training:
 ```bash
-python online_training.py --dataset unsw --epochs 300 --epoch_1 3 --flip_percent 0.05 --sample_interval 2784
+python online_training.py --dataset unsw --epochs 800 --epoch_1 1 --flip_percent 0.05 --sample_interval 2784
 ```
 
 ## Citation
