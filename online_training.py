@@ -14,8 +14,6 @@ import warnings
 warnings.filterwarnings('ignore')
 
 parser = argparse.ArgumentParser(description='manual to this script')
-parser.add_argument("--seed", type=int, default=5011)
-parser.add_argument("--round", type=int, default=5)
 parser.add_argument("--dataset", type=str, default='nsl')
 parser.add_argument("--epochs", type=int, default=4)
 parser.add_argument("--epoch_1", type=int, default=1)
@@ -28,16 +26,15 @@ args = parser.parse_args()
 dataset = args.dataset
 epochs = args.epochs
 epoch_1 = args.epoch_1
-seed = args.seed
-seed_round = args.round
 percent = args.percent
 flip_percent = args.flip_percent
 sample_interval = args.sample_interval
 cuda_num = args.cuda
 
 tem = 0.02
-lr = 0.001
 bs = 128
+seed = 5009
+seed_round = 5
 
 if dataset == 'nsl':
     input_dim = 121
@@ -81,7 +78,7 @@ criterion = CRCLoss(device, tem)
 
 for i in range(seed_round):
     # Set the seed for the random number generator for this iteration
-    setup_seed(seed)
+    setup_seed(seed+i)
 
     online_x_train, online_x_test, online_y_train, online_y_test = train_test_split(x_train, y_train, test_size=percent, random_state=seed+i)
     train_ds = TensorDataset(online_x_train, online_y_train)
