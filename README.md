@@ -28,12 +28,16 @@ python online_training.py --dataset unsw --epochs 800 --epoch_1 1 --flip_percent
 ## Citation
 If you find this code useful in your research, please cite:
 ```bibtex
-@article{zhang2024aoc,
-  title={AOC-IDS: Autonomous Online Framework with Contrastive Learning for Intrusion Detection},
-  author={Zhang, Xinchen and Zhao, Running and Jiang, Zhihan and Sun, Zhicong and Ding, Yulong and Ngai, Edith CH and Yang, Shuang-Hua},
-  journal={arXiv preprint arXiv:2402.01807},
-  year={2024}
-}
+@INPROCEEDINGS{zhang2024aoc,
+  author={Zhang, Xinchen and Zhao, Running and Jiang, Zhihan and Sun, Zhicong and Ding, Yulong and Ngai, Edith C.H. and Yang, Shuang-Hua},
+  booktitle={IEEE INFOCOM 2024 - IEEE Conference on Computer Communications}, 
+  title={AOC-IDS: Autonomous Online Framework with Contrastive Learning for Intrusion Detection}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={581-590},
+  keywords={Training;Decision making;Intrusion detection;Manuals;NSL-KDD;Feature extraction;Labeling;intrusion detection system;online learning;contrastive learning;Internet of Things},
+  doi={10.1109/INFOCOM52122.2024.10621346}}
 ```
 
 
