@@ -1,5 +1,5 @@
 # AOC-IDS
-This is the code for the paper: ["AOC-IDS: Autonomous Online Framework with Contrastive Learning for Intrusion Detection"](link-to-my-paper) (Infocom 2024)  
+This is the code for the paper: ["AOC-IDS: Autonomous Online Framework with Contrastive Learning for Intrusion Detection"](https://ieeexplore.ieee.org/document/10621346/) (Infocom 2024)  
 Xinchen Zhang, Running Zhao, Zhihan Jiang, Zhicong Sun, Yulong Ding, Edith C.H. Ngai, Shuang-hua Yang.
 
 ## Dependencies
