@@ -110,8 +110,11 @@ class CRCLoss(nn.Module):
         logits_normal = logits_without_ii[(labels == 0).squeeze()]
         logits_normal_normal = logits_normal[:,(labels == 0).squeeze()]
         logits_normal_abnormal = logits_normal[:,(labels > 0).squeeze()]
-
-        sum_of_vium = torch.sum(torch.exp(logits_normal_abnormal), axis=1, keepdims=True)
+        
+        ## This is the denominator for InfoNCE loss: ONE time of traversal
+        # sum_of_vium = torch.sum(torch.exp(logits_normal_abnormal), axis=1, keepdims=True)
+        ## This is the denominator for our proposed CRC loss: TWO times of traversal
+        sum_of_vium = torch.sum(torch.exp(logits_normal_abnormal))
         denominator = torch.exp(logits_normal_normal) + sum_of_vium
         log_probs = logits_normal_normal - torch.log(denominator)
   
